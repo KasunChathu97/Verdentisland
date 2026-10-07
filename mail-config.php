@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // SMTP configuration for inquiry emails.
 // IMPORTANT:
@@ -8,12 +8,12 @@
 
 return [
     'to_email' => 'jucontravels@gmail.com',
-    'to_name' => 'JUCON TRAVELS Admin',
+    'to_name' => 'Verdentisland Admin',
 
     // Sender identity shown in the email.
     // For Gmail this should usually match the authenticated SMTP account.
     'from_email' => 'jucontravels@gmail.com',
-    'from_name' => 'JUCON TRAVELS',
+    'from_name' => 'Verdentisland',
 
     // SMTP server settings
     'smtp_host' => 'smtp.gmail.com',
@@ -23,3 +23,4 @@ return [
     'smtp_username' => 'jucontravels@gmail.com',
     'smtp_password' => 'znksullpfhtbvzsb',
 ];
+

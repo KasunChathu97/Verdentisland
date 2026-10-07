@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>JUCON TRAVELS | Home</title>
+    <title>Verdentisland | Home</title>
     <meta name="description"
         content="Tailor-made tours and wellness retreats in Sri Lanka. Authentic experiences crafted with trusted local experts." />
     <!-- Removed theme-color meta tag for full cross-browser compatibility; this feature is not supported in Firefox or Opera. -->
@@ -25,8 +25,8 @@
             --text: #111;
             --muted: #222;
             --muted2: #444;
-            --brand: #22c55e;
-            --brand2: #10b981;
+            --brand: #26b501;
+            --brand2: #1f9401;
             --accent: #fbbf24;
             --danger: #ef4444;
             --border: #e0e0e0;
@@ -34,9 +34,9 @@
             --radius: 18px;
             --radius2: 26px;
             --max: 1180px;
-            --brand-blue: #0077b6;
+            --brand-blue: #26b501;
             /* deep ocean blue */
-            --light-blue: #90e0ef;
+            --light-blue: #86e866;
             /* light sky glow */
         }
 
@@ -122,8 +122,8 @@ line-height:1.6;
             border-radius: 16px;
             background:
                 radial-gradient(32px 32px at 30% 25%, rgba(255, 255, 255, .55), transparent 60%),
-                linear-gradient(135deg, #10b981, #22c55e);
-            box-shadow: 0 12px 36px rgba(16, 185, 129, .35);
+                linear-gradient(135deg, #10b981, #26b501);
+            box-shadow: 0 12px 36px rgba(31, 148, 1, .35);
             border: 1px solid rgba(255, 255, 255, .18);
             flex: 0 0 auto;
         }
@@ -250,14 +250,14 @@ line-height:1.6;
         }
 
         .btn.primary {
-            background: linear-gradient(135deg, rgba(34, 197, 94, .95), rgba(16, 185, 129, .92));
+            background: linear-gradient(135deg, rgba(38, 181, 1, .95), rgba(31, 148, 1, .92));
             border-color: rgba(255, 255, 255, .20);
             color: #052016;
-            box-shadow: 0 18px 48px rgba(34, 197, 94, .22);
+            box-shadow: 0 18px 48px rgba(38, 181, 1, .22);
         }
 
         .btn.primary:hover {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 1), rgba(16, 185, 129, 1));
+            background: linear-gradient(135deg, rgba(38, 181, 1, 1), rgba(31, 148, 1, 1));
         }
 
         .btn.small {
@@ -357,7 +357,7 @@ line-height:1.6;
             border-radius: var(--radius2);
             border: 1px solid rgba(255, 255, 255, .12);
             background:
-                radial-gradient(600px 260px at 30% 0%, rgba(34, 197, 94, .18), transparent 60%),
+                radial-gradient(600px 260px at 30% 0%, rgba(38, 181, 1, .18), transparent 60%),
                 radial-gradient(420px 240px at 85% 30%, rgba(251, 191, 36, .14), transparent 55%),
                 rgba(255, 255, 255, .06);
             box-shadow: var(--shadow);
@@ -509,9 +509,9 @@ line-height:1.6;
             width: 28px;
             height: 28px;
             border-radius: 10px;
-            background: rgba(34, 197, 94, .16);
-            border: 1px solid rgba(34, 197, 94, .22);
-            box-shadow: 0 10px 25px rgba(34, 197, 94, .10);
+            background: rgba(38, 181, 1, .16);
+            border: 1px solid rgba(38, 181, 1, .22);
+            box-shadow: 0 10px 25px rgba(38, 181, 1, .10);
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -540,7 +540,7 @@ line-height:1.6;
             border-radius: var(--radius2);
             border: 1px solid rgba(255, 255, 255, .12);
             background:
-                radial-gradient(650px 300px at 20% 0%, rgba(34, 197, 94, .18), transparent 58%),
+                radial-gradient(650px 300px at 20% 0%, rgba(38, 181, 1, .18), transparent 58%),
                 radial-gradient(500px 300px at 90% 20%, rgba(251, 191, 36, .14), transparent 55%),
                 rgba(255, 255, 255, .06);
             box-shadow: var(--shadow);
@@ -734,6 +734,58 @@ line-height:1.6;
             border: none;
         }
 
+        .hero-slideshow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+        }
+        
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .hero-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .hero-dot.active {
+            background: rgba(255, 255, 255, 1);
+        }
+
 
         h2 {
             color: #333;
@@ -788,7 +840,7 @@ line-height:1.6;
             transform: translateY(-50%);
             width: 10px;
             height: 10px;
-            background: #0077b6;
+            background: #26b501;
             border-radius: 50%;
             animation: leftBlink 1.5s infinite ease-in-out;
         }
@@ -797,7 +849,7 @@ line-height:1.6;
         @keyframes leftBlink {
             0% {
                 opacity: 0.4;
-                box-shadow: 0 0 0px rgba(0, 119, 182, 0.4);
+                box-shadow: 0 0 0px rgba(38, 181, 1, 0.4);
             }
 
             50% {
@@ -807,7 +859,7 @@ line-height:1.6;
 
             100% {
                 opacity: 0.4;
-                box-shadow: 0 0 0px rgba(0, 119, 182, 0.4);
+                box-shadow: 0 0 0px rgba(38, 181, 1, 0.4);
             }
         }
 
@@ -1000,15 +1052,15 @@ line-height:1.6;
             display: inline-block;
             margin-top: 20px;
             padding: 12px 28px;
-            border: 2px solid #0077b6;
+            border: 2px solid #26b501;
             border-radius: 30px;
-            color: #0077b6;
+            color: #26b501;
             text-decoration: none;
             transition: 0.3s;
         }
 
         .btn-outline:hover {
-            background: #0077b6;
+            background: #26b501;
             color: #fff;
         }
 
@@ -1592,7 +1644,7 @@ line-height:1.6;
             transform: translateY(-50%);
             width: 10px;
             height: 10px;
-            background: #0077b6;
+            background: #26b501;
             border-radius: 50%;
             animation: leftBlink 1.5s infinite ease-in-out;
         }
@@ -1681,7 +1733,7 @@ line-height:1.6;
         .image-wrapper {
             position: relative;
             overflow: hidden;
-            /* ðŸ”¥ meka very important */
+            /* Ã°Å¸â€Â¥ meka very important */
             border-radius: 20px;
         }
 
@@ -1997,12 +2049,8 @@ line-height:1.6;
     <!-- HEADER -->
     <div class="container-header">
         <div class="header-inner">
-            <a class="brand" href="index.html" aria-label="JUCON TRAVELS home">
-                <img src="images/logo.png" alt="JUCON TRAVELS" class="site-logo" />
-                <div class="brand-title">
-                    <strong>JUCON TRAVELS</strong>
-                    <span>Travel Agency, Sri Lanka</span>
-                </div>
+            <a class="brand" href="index.html" aria-label="Verdentisland home">
+                <img src="images/logo3.png" alt="Verdentisland" class="site-logo" />
             </a>
 
             <nav class="nav" aria-label="Primary">
@@ -2033,13 +2081,34 @@ line-height:1.6;
         </div>
     </div>
 
-    <!-- Responsive YouTube Video Embed -->
+    <!-- Responsive Hero Slideshow -->
     <div class="video-container">
         <div class="video-wrapper-full">
-            <iframe
-                src="https://www.youtube.com/embed/4GXv3lDzPf0?autoplay=1&controls=1&loop=1&playlist=4GXv3lDzPf0&rel=0&modestbranding=1"
-                title="SriLanka Joy Tours" allow="autoplay; encrypted-media" allowfullscreen>
-            </iframe>
+            <div class="hero-slideshow">
+                <div class="hero-slide active">
+                    <img src="images/img1.jpeg" alt="Hero Image 1">
+                </div>
+                <div class="hero-slide">
+                    <img src="images/img3.jpeg" alt="Hero Image 2">
+                </div>
+                <div class="hero-slide">
+                    <img src="images/img5.jpeg" alt="Hero Image 3">
+                </div>
+                <div class="hero-slide">
+                    <img src="images/img6.jpeg" alt="Hero Image 4">
+                </div>
+                <div class="hero-slide">
+                    <img src="images/img10.jpeg" alt="Hero Image 5">
+                </div>
+            </div>
+            
+            <div class="hero-indicators">
+                <span class="hero-dot active" data-index="0"></span>
+                <span class="hero-dot" data-index="1"></span>
+                <span class="hero-dot" data-index="2"></span>
+                <span class="hero-dot" data-index="3"></span>
+                <span class="hero-dot" data-index="4"></span>
+            </div>
         </div>
     </div>
 
@@ -2063,16 +2132,16 @@ line-height:1.6;
     <!-- ABOUT JOY PROJECT SECTION -->
     <section class="about-section">
         <div class="container">
-            <span class="sub-title">ABOUT Jucon Travels</span>
+            <span class="sub-title">ABOUT Verdentisland</span>
 
             <h1 class="highlight">
                 Unlock the Authentic Magic of Sri Lanka <br>
-                <span class="highlight">with Jucon Travels</span>
+                <span class="highlight">with Verdentisland</span>
             </h1>
 
-            <p>Jucon Travels, a division of Jucon (Pvt.) Ltd, is a trusted inbound tour operator specializing in creating unforgettable travel experiences across Sri Lanka. From family vacations and quick getaways to fully customized tours, we design journeys that go beyond ordinary travel.
+            <p>Verdentisland, a division of Jucon (Pvt.) Ltd, is a trusted inbound tour operator specializing in creating unforgettable travel experiences across Sri Lanka. From family vacations and quick getaways to fully customized tours, we design journeys that go beyond ordinary travel.
 
-With expert planning, reliable partnerships, and personalized service, we take care of every detail of your trip — from your arrival at Bandaranaike International Airport to your departure — ensuring a smooth, safe, and truly memorable Sri Lankan adventure.
+With expert planning, reliable partnerships, and personalized service, we take care of every detail of your trip â€” from your arrival at Bandaranaike International Airport to your departure â€” ensuring a smooth, safe, and truly memorable Sri Lankan adventure.
             </p>
 
             <a href="tours-retreats.html" class="btn-primary">DISCOVER MORE</a>
@@ -2083,24 +2152,12 @@ With expert planning, reliable partnerships, and personalized service, we take c
         data-id="339b4ed" data-element_type="widget" data-e-type="widget"
         data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInRight&quot;}"
         data-widget_type="image.default">
-        <div class="elementor-widget-container">
-            <img decoding="async" width="677" height="334"
-                src="https://srilankajoytours.com/wp-content/uploads/2024/03/World-map.png"
-                class="attachment-full size-full wp-image-18669" alt=""
-                srcset="https://srilankajoytours.com/wp-content/uploads/2024/03/World-map.png 677w, https://srilankajoytours.com/wp-content/uploads/2024/03/World-map-600x296.png 600w, https://srilankajoytours.com/wp-content/uploads/2024/03/World-map-300x148.png 300w"
-                sizes="(max-width: 677px) 100vw, 677px" />
-        </div>
     </div>
     <!-- Plane -->
     <div class="elementor-element elementor-element-b663ccc elementor-absolute elementor-invisible elementor-widget elementor-widget-image"
         data-id="b663ccc" data-element_type="widget" data-e-type="widget"
         data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_animation&quot;:&quot;fadeInUp&quot;}"
         data-widget_type="image.default">
-        <div class="elementor-widget-container">
-            <img decoding="async" width="336" height="404"
-                src="https://srilankajoytours.com/wp-content/uploads/2024/03/Plane.svg"
-                class="attachment-full size-full wp-image-18940" alt="" />
-        </div>
     </div>
 
     <!-- START: Tours / Leaders / Promoters Section -->
@@ -2192,7 +2249,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
         <div class="why-travel-container">
             <!-- Heading -->
             <div class="why-travel-heading">
-                <span class="sub-title2">JUCON TRAVELS SPECIALS</span>
+                <span class="sub-title2">Verdentisland SPECIALS</span>
                 <h1 class="highlight2">
                     WHY TRAVEL WITH US</span>
                 </h1>
@@ -2201,25 +2258,25 @@ With expert planning, reliable partnerships, and personalized service, we take c
             <!-- Features / Icon Boxes -->
             <div class="features-container">
                 <div class="feature-item">
-                    <img src="https://srilankajoytours.com/wp-content/uploads/2024/08/1.svg" alt="Tailor-made Journeys">
+                    <img src="images/logo3.png" alt="Tailor-made Journeys">
                     <h3>100% TAILOR-MADE JOURNEYS</h3>
                     <p>Experience unique adventures crafted specifically to align with your personal preferences,
                         ensuring a journey tailored just for you.</p>
                 </div>
                 <div class="feature-item">
-                    <img src="https://srilankajoytours.com/wp-content/uploads/2024/08/2.svg" alt="Personalised Support">
+                    <img src="images/logo3.png" alt="Personalised Support">
                     <h3>1 : 1 PERSONALISED SUPPORT</h3>
                     <p>Enjoy direct, individual communication with our team, providing seamless, friendly, and
                         professional service customised to your needs.</p>
                 </div>
                 <div class="feature-item">
-                    <img src="https://srilankajoytours.com/wp-content/uploads/2024/08/3.svg" alt="Trusted Experts">
+                    <img src="images/logo3.png" alt="Trusted Experts">
                     <h3>100% TRUSTED LOCAL EXPERTS</h3>
                     <p>Rely on our fully licensed local ground tour operator with of expertise, for
                         exceptional knowledge and dependable service, ensuring a flawless journey</p>
                 </div>
                 <div class="feature-item">
-                    <img src="https://srilankajoytours.com/wp-content/uploads/2024/08/4.svg" alt="Years of Excellence">
+                    <img src="images/logo3.png" alt="Years of Excellence">
                     <h3>YEARS OF EXCELLENCE</h3>
                     <p>Leverage over of experience in hospitality and wellness, guaranteeing top quality care
                         and exceptional experiences throughout your journey.</p>
@@ -2250,25 +2307,25 @@ With expert planning, reliable partnerships, and personalized service, we take c
 
                 <div class="slider">
                     <div class="slide"><img
-                            src="https://srilankajoytours.com/wp-content/uploads/2024/09/best_srilanka1.jpg"
+                            src="images/p1.jpeg"
                             alt="Best of Sri Lanka - Scenic View"></div>
                     <div class="slide"><img
-                            src="https://srilankajoytours.com/wp-content/uploads/2024/09/best_srilanka2.jpg"
+                            src="images/p5.jpeg"
                             alt="Best of Sri Lanka - Scenic View"></div>
                     <div class="slide"><img
-                            src="https://srilankajoytours.com/wp-content/uploads/2024/09/best_srilanka3.jpg"
+                            src="images/p6.jpeg"
                             alt="Best of Sri Lanka - Scenic View"></div>
                     <div class="slide"><img
-                            src="https://srilankajoytours.com/wp-content/uploads/2024/09/best_srilanka4.jpg"
+                            src="images/p7.jpeg"
                             alt="Best of Sri Lanka - Scenic View"></div>
                     <div class="slide"><img
-                            src="https://srilankajoytours.com/wp-content/uploads/2024/09/best_srilanka5.jpg"
+                            src="images/p8.jpeg"
                             alt="Best of Sri Lanka - Scenic View"></div>
                     <div class="slide"><img
-                            src="https://srilankajoytours.com/wp-content/uploads/2024/09/best_srilanka8.jpg"
+                            src="images/p9.jpeg"
                             alt="Best of Sri Lanka - Scenic View"></div>
                     <div class="slide"><img
-                            src="https://srilankajoytours.com/wp-content/uploads/2024/09/best_srilanka9.jpg"
+                            src="images/p10.jpeg"
                             alt="Best of Sri Lanka - Scenic View"></div>
                 </div>
 
@@ -2286,7 +2343,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
 
             <!-- Image Side -->
             <div class="inspirational-image">
-                <img src="https://srilankajoytours.com/wp-content/uploads/2024/09/Inspirational_journeys.jpg"
+                <img src="images/img6.jpeg"
                     alt="Inspirational Journeys">
             </div>
 
@@ -2295,7 +2352,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
                 <h3>Inspirational Journeys, Authentic Experiences</h3>
 
                 <p>
-                    At Jucon Travels, we craft transformative tours and retreats that blend wellness, adventure, and cultural immersion. With over years of expertise in hospitality and wellness, we are passionate about creating unforgettable journeys that showcase Sri Lanka’s rich heritage, stunning landscapes, and vibrant traditions.
+                    At Verdentisland, we craft transformative tours and retreats that blend wellness, adventure, and cultural immersion. With over years of expertise in hospitality and wellness, we are passionate about creating unforgettable journeys that showcase Sri Lankaâ€™s rich heritage, stunning landscapes, and vibrant traditions.
                 </p>
 
                 <p>
@@ -2303,7 +2360,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
                 </p>
 
                 <p>
-                    Whether you seek peace, adventure, or both, Jucon Travels curates life-changing experiences in one of the world’s most incredible destinations. Thank you for choosing us as your trusted partner in exploring the magic of Sri Lanka!
+                    Whether you seek peace, adventure, or both, Verdentisland curates life-changing experiences in one of the worldâ€™s most incredible destinations. Thank you for choosing us as your trusted partner in exploring the magic of Sri Lanka!
                 </p>
 
                 <a href="tours-retreats.html" class="btn-primary">DISCOVER MORE</a>
@@ -2328,8 +2385,8 @@ With expert planning, reliable partnerships, and personalized service, we take c
                 </h2>
 
                 <div class="tailor-box">
-                    <h4>Explore Sri Lanka’s Best</h4>
-                    <p>Discover Sri Lanka’s iconic landscapes, rich culture, and <br>serene retreats with our thoughtfully crafted tours.</p>
+                    <h4>Explore Sri Lankaâ€™s Best</h4>
+                    <p>Discover Sri Lankaâ€™s iconic landscapes, rich culture, and <br>serene retreats with our thoughtfully crafted tours.</p>
                 </div>
 
                 <div class="tailor-box">
@@ -2357,7 +2414,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
 
             <!-- Image Side -->
             <div class="inspirational-image">
-                <img src="https://srilankajoytours.com/wp-content/uploads/2024/09/journey_passion.jpg"
+                <img src="images/img5.jpeg"
                     alt="Journey Passion">
             </div>
 
@@ -2385,7 +2442,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
 
                         <div class="image-wrapper">
                             <a href="https://your-link-here.com">
-                                <img src="https://srilankajoytours.com/wp-content/uploads/2024/10/First-Time-in-Srilanka.png"
+                                <img src="images/p11.jpeg"
                                     alt="First Time in Sri Lanka: Love, Laughter, and a Feast">
                             </a>
                         </div>
@@ -2402,7 +2459,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
 
                         <div class="image-wrapper">
                             <a href="https://your-link-here.com">
-                                <img src="https://srilankajoytours.com/wp-content/uploads/2024/10/Hotels-.png"
+                                <img src="images/p12.jpeg"
                                     alt="Sri Lankan Hospitality: A Warm Welcome at Every Hotel">
                             </a>
 
@@ -2421,7 +2478,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
 
                         <div class="image-wrapper">
                             <a href="https://your-link-here.com">
-                                <img src="https://srilankajoytours.com/wp-content/uploads/2024/10/Out-with-jact-3.png"
+                                <img src="images/p13.jpeg"
                                     alt="Out and About with Jack: A Joyful Reunion">
                             </a>
                         </div>
@@ -2439,7 +2496,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
 
                         <div class="image-wrapper">
                             <a href="https://your-link-here.com">
-                                <img src="https://srilankajoytours.com/wp-content/uploads/2024/10/Anure.png"
+                                <img src="images/p14.jpeg"
                                     alt="Anure and the Magic Car">
                             </a>
 
@@ -2483,10 +2540,10 @@ With expert planning, reliable partnerships, and personalized service, we take c
         <div class="container footer-grid">
             <!-- Column 1: Logo + Social -->
             <div class="footer-column">
-                <a class="brand" href="index.html" aria-label="JUCON TRAVELS home">
-                    <img src="images/logo.png" alt="JUCON TRAVELS" class="site-logo" />
+                <a class="brand" href="index.html" aria-label="Verdentisland home">
+                    <img src="images/logo.png" alt="Verdentisland" class="site-logo" />
                     <div class="brand-title1">
-                        <strong>JUCON TRAVELS</strong>
+                        <strong>Verdentisland</strong>
                         <span>Travel Agency, Sri Lanka</span>
                     </div>
                 </a>
@@ -2558,7 +2615,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
 
         <!-- Copyright -->
         <div class="footer-bottom">
-            <div>Copyright © 2026 <a href="https://nmdskandy.lk/">nmdskandy</a>. All Rights Reserved</div>
+            <div>Copyright Â© 2026 <a href="https://nmdskandy.lk/">nmdskandy</a>. All Rights Reserved</div>
         </div>
     </footer>
 
@@ -2679,6 +2736,38 @@ With expert planning, reliable partnerships, and personalized service, we take c
             nextBtn.addEventListener('click', moveBlogNext);
             prevBtn.addEventListener('click', moveBlogPrev);
         });
+
+        // Hero Slideshow
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
+            if (slides.length === 0) return;
+            
+            let currentSlide = 0;
+            const slideInterval = 4000;
+
+            function goToSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                currentSlide = (index + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            let slideTimer = setInterval(nextSlide, slideInterval);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideTimer);
+                    goToSlide(index);
+                    slideTimer = setInterval(nextSlide, slideInterval);
+                });
+            });
+        });
     </script>
 
 
@@ -2687,3 +2776,7 @@ With expert planning, reliable partnerships, and personalized service, we take c
 </body>
 
 </html>
+
+
+
+

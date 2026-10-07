@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 declare(strict_types=1);
 
@@ -87,7 +87,7 @@ if ($selectedPackage !== '') $subjectParts[] = $selectedPackage;
 $subject = implode(' - ', $subjectParts);
 
 $lines = [];
-$lines[] = 'New inquiry received from JUCON TRAVELS website';
+$lines[] = 'New inquiry received from Verdentisland website';
 $lines[] = '';
 $lines[] = 'Inquiry Type: ' . ($inquiryType !== '' ? $inquiryType : '');
 $lines[] = 'Name: ' . $name;
@@ -142,6 +142,8 @@ use PHPMailer\PHPMailer\Exception;
 
 try {
     $mail = new PHPMailer(true);
+    $mail->SMTPDebug = 3;
+$mail->Debugoutput = 'echo';
 
     $mail->isSMTP();
     $mail->Host = (string)($config['smtp_host'] ?? '');
@@ -158,7 +160,7 @@ try {
     }
 
     $fromEmail = (string)($config['from_email'] ?? '');
-    $fromName = (string)($config['from_name'] ?? 'JUCON TRAVELS');
+    $fromName = (string)($config['from_name'] ?? 'Verdentisland');
     $toEmail = (string)($config['to_email'] ?? '');
     $toName = (string)($config['to_name'] ?? 'Admin');
 
@@ -224,3 +226,4 @@ try {
     http_response_code(500);
     echo json_encode(['ok' => false, 'error' => $e->getMessage()]);
 }
+
